@@ -17,8 +17,8 @@ ENV GIST_PAT= \
 
 WORKDIR /app
 
-COPY entrypoint.sh/app/entrypoint.sh
-COPY execute.sh/app/execute.sh
+COPY entrypoint.sh /app/entrypoint.sh
+COPY execute.sh /app/execute.sh
 
 RUN chmod +x /app/entrypoint.sh && chmod +x /app/execute.sh
 
