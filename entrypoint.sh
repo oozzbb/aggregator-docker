@@ -27,21 +27,11 @@ if [ -z $PROXY ]; then
     echo "[$(date +'% Y-% m-% d % H:% M:% S')] [WARN] 缺少 PROXY ，可能无法获取到结果。"
 fi
 
-# 设置代理
-export https_proxy=$PROXY http_proxy=$PROXY all_proxy=$PROXY
+if [ -n $CRON_RULE ]; then
+    echo "$CRON_RULE /app/execute.sh 2>&1" > /var/spool/cron/crontabs/root
+fi
 
-cd /app/aggregator
 
-# 更新代码
-echo "[$(date +'% Y-% m-% d % H:% M:% S')] [INFO] 更新代码 >>>"
-git pull
-
-# 安装 / 更新依赖
-echo "[$(date +'% Y-% m-% d % H:% M:% S')] [INFO] 安装 / 更新依赖 >>>"
-pip3 install -r requirements.txt -i https://mirrors.cloud.tencent.com/pypi/simple
-
-# 运行代码
-echo "[$(date +'% Y-% m-% d % H:% M:% S')] [INFO] 运行代码 >>>"
-python -u subscribe/collect.py -si
+./execute.sh
 
 exec "$@"
