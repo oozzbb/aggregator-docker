@@ -1,3 +1,7 @@
+感谢大佬
+
+[https://linux.do/t/topic/229803](https://linux.do/t/topic/229803)
+
 **准备工作**
 
 1 新建一个 [Github Gist](https://gist.github.com/)，指定名称和后缀: clash.yaml。
