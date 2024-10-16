@@ -1,4 +1,4 @@
-name: ci
+name: docker
 
 on:
   workflow_dispatch:
@@ -34,10 +34,3 @@ jobs:
           platforms: linux/amd64,linux/arm64
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/${{ env.TAGS }}
-      
-      - name: Update repo description
-        uses: peter-evans/dockerhub-description@v4 # v4.0.0
-        with:
-          username: ${{ secrets.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_TOKEN }}
-          repository: ${{ github.repository }}
