@@ -18,12 +18,12 @@ export https_proxy=$PROXY http_proxy=$PROXY all_proxy=$PROXY
 cd /app/aggregator
 
 # 更新代码
-echo "[$(date +'% Y-% m-% d % H:% M:% S')] [INFO] 更新代码 >>>"
-git pull
+#echo "[$(date +'% Y-% m-% d % H:% M:% S')] [INFO] 更新代码 >>>"
+#git pull
 
 # 安装 / 更新依赖
-echo "[$(date +'% Y-% m-% d % H:% M:% S')] [INFO] 安装 / 更新依赖 >>>"
-pip3 install -r requirements.txt -i https://mirrors.cloud.tencent.com/pypi/simple
+#echo "[$(date +'% Y-% m-% d % H:% M:% S')] [INFO] 安装 / 更新依赖 >>>"
+#pip3 install -r requirements.txt -i https://mirrors.cloud.tencent.com/pypi/simple
 
 # 运行代码
 echo "[$(date +'% Y-% m-% d % H:% M:% S')] [INFO] 运行代码 >>>"
