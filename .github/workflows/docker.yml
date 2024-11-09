@@ -1,7 +1,9 @@
 name: docker
 
 on:
-  workflow_dispatch:
+  schedule:
+    # Runs at 0:00 on every 7th day of the month.
+    - cron: '0 0 */7 * *'
   
 env:
   # github.repository as <account>/<repo>
