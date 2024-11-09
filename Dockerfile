@@ -6,7 +6,7 @@ RUN sed -i "s@https://dl-cdn.alpinelinux.org/@https://mirrors.cloud.tencent.com/
     mkdir /app && \
     cd /app && \
     git clone --depth=1 https://github.com/wzdnzd/aggregator.git  && \
-    pip3 install -r /aggregator/requirements.txt -i https://mirrors.cloud.tencent.com/pypi/simple
+    pip3 install -r /aggregator/requirements.txt
 
 ENV GIST_PAT= \
     GIST_LINK= \
