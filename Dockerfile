@@ -5,7 +5,8 @@ RUN sed -i "s@https://dl-cdn.alpinelinux.org/@https://mirrors.cloud.tencent.com/
     echo '0 */2 * * * /app/execute.sh 2>&1' > /var/spool/cron/crontabs/root && \
     mkdir /app && \
     cd /app && \
-    git clone --depth=1 https://github.com/wzdnzd/aggregator.git
+    git clone --depth=1 https://github.com/wzdnzd/aggregator.git  && \
+    pip3 install -r /aggregator/requirements.txt -i https://mirrors.cloud.tencent.com/pypi/simple
 
 ENV GIST_PAT= \
     GIST_LINK= \
