@@ -27,7 +27,7 @@ if [ -z $PROXY ]; then
     echo "[$(date +'% Y-% m-% d % H:% M:% S')] [WARN] 缺少 PROXY ，可能无法获取到结果。"
 fi
 
-if [ -n $CRON_RULE ]; then
+if [ -n "$CRON_RULE" ]; then
     echo "$CRON_RULE /app/execute.sh 2>&1" > /var/spool/cron/crontabs/root
 fi
 
