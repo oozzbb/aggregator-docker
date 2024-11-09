@@ -1,12 +1,13 @@
 FROM python:alpine3.20
 
-RUN sed -i "s@https://dl-cdn.alpinelinux.org/@https://mirrors.cloud.tencent.com/@g" /etc/apk/repositories && \
-    apk add --no-cache --update git && \
+RUN apk add --no-cache --update git && \
     echo '0 */2 * * * /app/execute.sh 2>&1' > /var/spool/cron/crontabs/root && \
     mkdir /app && \
     cd /app && \
-    git clone --depth=1 https://github.com/wzdnzd/aggregator.git  && \
-    pip3 install -r /aggregator/requirements.txt
+    git clone --depth=1 https://github.com/wzdnzd/aggregator.git
+
+RUN cd /app/aggregator && \
+    pip3 install -r requirements.txt
 
 ENV GIST_PAT= \
     GIST_LINK= \
