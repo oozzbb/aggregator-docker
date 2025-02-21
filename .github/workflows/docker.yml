@@ -4,6 +4,7 @@ on:
   schedule:
     # Runs at 0:00 on every 7th day of the month.
     - cron: '0 0 */7 * *'
+  workflow_dispatch: # 允许手动触发
   
 env:
   # github.repository as <account>/<repo>
@@ -30,7 +31,7 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
       
-      - name: Build and push
+      - name: Build 和 push
         uses: docker/build-push-action@v6
         with:
           platforms: linux/amd64,linux/arm64
