@@ -27,4 +27,4 @@ cd /app/aggregator
 
 # 运行代码
 echo "[$(date +'% Y-% m-% d % H:% M:% S')] [INFO] 运行代码 >>>"
-python -u subscribe/collect.py -si
+python -u subscribe/collect.py -e
